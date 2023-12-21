@@ -4,7 +4,8 @@
   "type": "module",
   "description": "[![Actions Status](https://github.com/Fleur26/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Fleur26/frontend-project-44/actions)",
   "bin": {
-    "nodejs-package": "bin/nodejs-package.js"
+    "nodejs-package": "bin/nodejs-package.js",
+    "brain-even": "bin/brain-even.js"
   },
   "main": "index.js",
   "scripts": {
