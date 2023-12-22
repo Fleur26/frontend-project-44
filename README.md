@@ -3,4 +3,5 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/950ba58d80265ea44e71/maintainability)](https://codeclimate.com/github/Fleur26/frontend-project-44/maintainability)
 
-https://asciinema.org/a/ChQbg3tr2b7r861hAlGsPJT5P
+https://asciinema.org/a/ChQbg3tr2b7r861hAlGsPJT5P - asciinema braineven
+https://asciinema.org/a/eukEHoENSX19elNSn3nfsjUdE - asciinema braincalc

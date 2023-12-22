@@ -10,16 +10,29 @@ const outputToScreen = (text) => {
 };
 
 const validateAnswer = (playerAnswer, trueAnswer, playerName = 'player') => {
+  let countDefeat = 0;
+  if (Number.isNaN(playerAnswer)) {
+    outputToScreen('Incorrect response format');
+    countDefeat += 1;
+    return countDefeat;
+  }
   if (playerAnswer === trueAnswer) {
     outputToScreen('Correct!');
-  } else {
-    outputToScreen(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".\nLet's try again ${playerName}!`);
+    return countDefeat;
   }
+  outputToScreen(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".\nLet's try again ${playerName}!`);
+  countDefeat += 1;
+  return countDefeat;
 };
-const getRandomNumber = (min, max) => {
-  Math.floor(Math.random() * (max - min) + min);
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
+const gameGreeting = (questionForGame) => {
+  outputToScreen('Welcome to the Brain Games!');
+
+  const playerName = takePlayerAnswer('May i have your name? ');
+  outputToScreen(`Hello, ${playerName}!\n${questionForGame}`);
+  return playerName;
 };
 
 export {
-  takePlayerAnswer, outputToScreen, validateAnswer, getRandomNumber,
+  takePlayerAnswer, outputToScreen, validateAnswer, getRandomNumber, gameGreeting,
 };

@@ -1,6 +1,6 @@
 import {
   takePlayerAnswer, outputToScreen, validateAnswer, getRandomNumber,
-} from './game-logic.js';
+} from '../src/game-logic.js';
 
 const evenGame = () => {
   outputToScreen('Welcome to the Brain Games!');
@@ -21,7 +21,7 @@ const evenGame = () => {
       isEven = 'no';
     }
     outputToScreen(`Question: ${randomNumb}`);
-    const playerAnswer = takePlayerAnswer('Your answer: ');
+    const playerAnswer = takePlayerAnswer();
     switch (playerAnswer) {
       case 'yes':
         validateAnswer(playerAnswer, isEven, playerName);
