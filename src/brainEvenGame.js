@@ -1,42 +1,36 @@
-import readlineSync from 'readline-sync';
+import {
+  takePlayerAnswer, outputToScreen, validateAnswer, getRandomNumber,
+} from './game-logic.js';
 
 const evenGame = () => {
-  console.log('Welcome to the Brain Games!');
+  outputToScreen('Welcome to the Brain Games!');
 
-  const playerName = readlineSync.question('May i have your name? ');
-  console.log(`Hello, ${playerName}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
+  const playerName = takePlayerAnswer('May i have your name? ');
+  outputToScreen(`Hello, ${playerName}!\nAnswer "yes" if the number is even, otherwise answer "no".`);
   const countRightAnswers = 3;
-  const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
-
   let countAnswersPlayer = 0;
   let playerDefeat = 0;
+  const rightAnswer = 'yes or no';
   while (countAnswersPlayer < countRightAnswers && playerDefeat !== 1) {
     countAnswersPlayer += 1;
     const randomNumb = getRandomNumber(1, 100);
-    const isEven = randomNumb % 2 === 0;
-    console.log(`Question: ${randomNumb}`);
-    const playerAnswer = readlineSync.question('Your answer: ');
+    let isEven = randomNumb % 2 === 0;
+    if (isEven) {
+      isEven = 'yes';
+    } else {
+      isEven = 'no';
+    }
+    outputToScreen(`Question: ${randomNumb}`);
+    const playerAnswer = takePlayerAnswer('Your answer: ');
     switch (playerAnswer) {
       case 'yes':
-        if (isEven) {
-          console.log('Correct!');
-        } else {
-          console.log(`"yes" is wrong answer ;(. Correct answer was "no".\nLet's try again ${playerName}!`);
-          playerDefeat += 1;
-        }
+        validateAnswer(playerAnswer, isEven, playerName);
         break;
       case 'no':
-        if (!isEven) {
-          console.log('Correct!');
-        } else {
-          console.log(`"no" is wrong answer ;(. Correct answer was "yes".\nLet's try again ${playerName}!`);
-          playerDefeat += 1;
-        }
+        validateAnswer(playerAnswer, isEven, playerName);
         break;
       default:
-        console.log(`Thats not correct answer, please, answer "yes" or "no". \nLet's try again ${playerName}!`);
+        validateAnswer(playerAnswer, rightAnswer, playerName);
         playerDefeat += 1;
         break;
     }
