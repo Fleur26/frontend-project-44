@@ -1,5 +1,5 @@
 import {
-  Gcd, gameGreeting, getRandomNumber, takePlayerAnswer, validateAnswer, outputToScreen,
+  winOrLoose, Gcd, gameGreeting, getRandomNumber, takePlayerAnswer, validateAnswer, outputToScreen,
 } from '../src/game-logic.js';
 
 const brainGcd = () => {
@@ -16,9 +16,7 @@ const brainGcd = () => {
     const playerAnswer = takePlayerAnswer('Your answer: ');
     countPlayerDefeat += validateAnswer(Number(playerAnswer), trueAnswer, playerName);
   }
-  if (countPlayerDefeat === 0) {
-    outputToScreen('Congratulations');
-  }
+  winOrLoose(countPlayerDefeat, playerName);
 };
 
 export default brainGcd;

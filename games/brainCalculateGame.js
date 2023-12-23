@@ -1,5 +1,5 @@
 import {
-  gameGreeting, getRandomNumber, takePlayerAnswer, validateAnswer, outputToScreen,
+  winOrLoose, gameGreeting, getRandomNumber, takePlayerAnswer, validateAnswer, outputToScreen,
 } from '../src/game-logic.js';
 
 const brainCalculator = () => {
@@ -44,9 +44,7 @@ const brainCalculator = () => {
         break;
     }
   }
-  if (countDefeat === 0) {
-    console.log(`Congratulations, ${playerName}!`);
-  }
+  winOrLoose(countDefeat, playerName);
 };
 
 export default brainCalculator;

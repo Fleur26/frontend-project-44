@@ -20,7 +20,7 @@ const validateAnswer = (playerAnswer, trueAnswer, playerName = 'player') => {
     outputToScreen('Correct!');
     return countDefeat;
   }
-  outputToScreen(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".\nLet's try again ${playerName}!`);
+  outputToScreen(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".`);
   countDefeat += 1;
   return countDefeat;
 };
@@ -46,21 +46,19 @@ const Gcd = (x, y) => {
   let result = 0;
   if (firstNumb === 0) {
     result = secondNumb;
-  }
-   else {
+  } else {
     result = firstNumb;
-   }
+  }
   return result;
 };
 
-const winOrLoose = (defeatScore) => {
- if (defeatScore === 0 ){
-
- }
- else{
-  
- }
-}
+const winOrLoose = (defeatScore, playerName) => {
+  if (defeatScore === 0) {
+    console.log(`Congratulations, ${playerName}!`);
+  } else {
+    console.log(`Let's try again ${playerName}!`);
+  }
+};
 export {
   winOrLoose, Gcd, takePlayerAnswer, outputToScreen, validateAnswer, getRandomNumber, gameGreeting,
 };

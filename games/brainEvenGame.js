@@ -1,5 +1,5 @@
 import {
-  takePlayerAnswer, outputToScreen, validateAnswer, getRandomNumber,
+  winOrLoose, takePlayerAnswer, outputToScreen, validateAnswer, getRandomNumber, winOrLoose,
 } from '../src/game-logic.js';
 
 const evenGame = () => {
@@ -36,8 +36,6 @@ const evenGame = () => {
     }
   }
 
-  if (playerDefeat === 0) {
-    console.log(`Congratulations, ${playerName}!`);
-  }
+  winOrLoose(playerDefeat, playerName);
 };
 export default evenGame;
