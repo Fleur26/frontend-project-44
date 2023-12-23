@@ -22,17 +22,16 @@ const evenGame = () => {
       isEven = 'no';
     }
     outputToScreen(`Question: ${randomNumb}`);
-    const playerAnswer = takePlayerAnswer();
+    const playerAnswer = takePlayerAnswer('Your answer: ');
     switch (playerAnswer) {
       case 'yes':
-        validateAnswer(playerAnswer, isEven);
+        playerDefeat += validateAnswer(playerAnswer, isEven);
         break;
       case 'no':
-        validateAnswer(playerAnswer, isEven);
+        playerDefeat += validateAnswer(playerAnswer, isEven);
         break;
       default:
-        validateAnswer(playerAnswer, rightAnswer);
-        playerDefeat += 1;
+        playerDefeat += validateAnswer(playerAnswer, rightAnswer);
         break;
     }
   }
