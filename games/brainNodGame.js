@@ -15,7 +15,7 @@ const brainGcd = () => {
     console.log(trueAnswer);
     outputToScreen(`Question: ${firstRandomNumber}  ${secondRandomNumber}`);
     const playerAnswer = takePlayerAnswer('Your answer: ');
-    countPlayerDefeat += validateAnswer(Number(playerAnswer), trueAnswer, playerName);
+    countPlayerDefeat += validateAnswer(Number(playerAnswer), trueAnswer);
   }
   winOrLoose(countPlayerDefeat, playerName);
 };

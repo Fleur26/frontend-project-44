@@ -20,26 +20,26 @@ const brainCalculator = () => {
         trueAnswer = firstRandomNumb + secondRandomNumb;
         outputToScreen(`Question: ${firstRandomNumb} + ${secondRandomNumb}`);
         playerAnswer = takePlayerAnswer('Your answer: ');
-        countDefeat += validateAnswer(Number(playerAnswer), trueAnswer, playerName);
+        countDefeat += validateAnswer(Number(playerAnswer), trueAnswer);
         break;
       case 2:
         if (firstRandomNumb > secondRandomNumb) {
           trueAnswer = firstRandomNumb - secondRandomNumb;
           outputToScreen(`Question: ${firstRandomNumb} - ${secondRandomNumb}`);
           playerAnswer = takePlayerAnswer('Your answer: ');
-          countDefeat = validateAnswer(Number(playerAnswer), trueAnswer, playerName);
+          countDefeat = validateAnswer(Number(playerAnswer), trueAnswer);
         } else {
           trueAnswer = secondRandomNumb - firstRandomNumb;
           outputToScreen(`Question: ${secondRandomNumb} - ${firstRandomNumb}`);
           playerAnswer = takePlayerAnswer('Your answer: ');
-          countDefeat += validateAnswer(Number(playerAnswer), trueAnswer, playerName);
+          countDefeat += validateAnswer(Number(playerAnswer), trueAnswer);
         }
         break;
       case 3:
         trueAnswer = firstRandomNumb * secondRandomNumb;
         outputToScreen(`Question: ${firstRandomNumb} * ${secondRandomNumb}`);
         playerAnswer = takePlayerAnswer('Your answer: ');
-        countDefeat += validateAnswer(Number(playerAnswer), trueAnswer, playerName);
+        countDefeat += validateAnswer(Number(playerAnswer), trueAnswer);
         break;
       default:
         break;

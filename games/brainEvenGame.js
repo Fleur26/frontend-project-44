@@ -25,13 +25,13 @@ const evenGame = () => {
     const playerAnswer = takePlayerAnswer();
     switch (playerAnswer) {
       case 'yes':
-        validateAnswer(playerAnswer, isEven, playerName);
+        validateAnswer(playerAnswer, isEven);
         break;
       case 'no':
-        validateAnswer(playerAnswer, isEven, playerName);
+        validateAnswer(playerAnswer, isEven);
         break;
       default:
-        validateAnswer(playerAnswer, rightAnswer, playerName);
+        validateAnswer(playerAnswer, rightAnswer);
         playerDefeat += 1;
         break;
     }
