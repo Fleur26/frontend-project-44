@@ -6,7 +6,8 @@
   "bin": {
     "nodejs-package": "bin/nodejs-package.js",
     "brain-even": "bin/brain-even.js",
-    "brain-calculator": "bin/brain-calculator.js"
+    "brain-calculator": "bin/brain-calculator.js",
+    "brain-gcd": "bin/brain-gcd.js"
   },
   "main": "index.js",
   "scripts": {
