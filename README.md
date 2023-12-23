@@ -5,3 +5,4 @@
 
 https://asciinema.org/a/ChQbg3tr2b7r861hAlGsPJT5P - asciinema braineven
 https://asciinema.org/a/eukEHoENSX19elNSn3nfsjUdE - asciinema braincalc
+https://asciinema.org/a/xaBxnCOXdprgBKDWE1pdsye45 - asciinema braingcd
