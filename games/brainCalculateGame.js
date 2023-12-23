@@ -1,6 +1,7 @@
 import {
-  winOrLoose, gameGreeting, getRandomNumber, takePlayerAnswer, validateAnswer, outputToScreen,
+  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, outputToScreen,
 } from '../src/game-logic.js';
+import { getRandomNumber } from '../src/arithmetic-logic.js';
 
 const brainCalculator = () => {
   const playerName = gameGreeting('What is the result of the expression?');

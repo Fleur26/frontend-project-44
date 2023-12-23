@@ -1,6 +1,7 @@
 import {
-  winOrLoose, Gcd, gameGreeting, getRandomNumber, takePlayerAnswer, validateAnswer, outputToScreen,
+  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, outputToScreen,
 } from '../src/game-logic.js';
+import { getRandomNumber, Gcd } from '../src/arithmetic-logic.js';
 
 const brainGcd = () => {
   const playerName = gameGreeting('Find the greatest common divisor of given numbers.');
