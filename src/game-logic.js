@@ -5,11 +5,12 @@ const takePlayerAnswer = (question) => {
   return playerAnswer;
 };
 
-const outputToScreen = (text) => {
+const outputToScreen = (text) => { // delete //
   console.log(text);
 };
 
 const validateAnswer = (playerAnswer, trueAnswer) => {
+  // split the loss check and the response validation ? //
   let countDefeat = 0;
   if (Number.isNaN(playerAnswer)) {
     outputToScreen('Incorrect response format');
