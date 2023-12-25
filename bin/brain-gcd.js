@@ -1,3 +1,3 @@
-import brainGcd from "../games/brainNodGame.js";
+import brainGcd from '../games/brainNodGame.js';
 
 brainGcd();
