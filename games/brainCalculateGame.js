@@ -1,49 +1,36 @@
 import {
-  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, outputToScreen,
+  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer,
 } from '../src/game-logic.js';
 import { getRandomNumber } from '../src/arithmetic-logic.js';
 
 const brainCalculator = () => {
   const playerName = gameGreeting('What is the result of the expression?');
-  const countOfRightAnswer = 3;
+  let countOfRightAnswer = 3;
   let playerAnswer = '';
   let countDefeat = 0;
-  let countAnswersPlayer = 0;
-  while (countAnswersPlayer < countOfRightAnswer && countDefeat !== 1) {
-    countAnswersPlayer += 1;
+
+  while (countOfRightAnswer > 0 && countDefeat === 0) {
+    countOfRightAnswer -= 1;
     const firstRandomNumb = getRandomNumber(1, 10);
     const secondRandomNumb = getRandomNumber(1, 10);
-    const indexOfArithmeticOp = getRandomNumber(1, 4);
+    const arrayArithmeticOp = ['+', '-', '*'];
     let trueAnswer = 0;
-    switch (indexOfArithmeticOp) {
-      case 1:
+    const index = getRandomNumber(0, 3);
+    const operation = arrayArithmeticOp[index];
+    switch (operation) {
+      case '+':
         trueAnswer = firstRandomNumb + secondRandomNumb;
-        outputToScreen(`Question: ${firstRandomNumb} + ${secondRandomNumb}`);
-        playerAnswer = takePlayerAnswer('Your answer: ');
-        countDefeat += validateAnswer(Number(playerAnswer), trueAnswer);
         break;
-      case 2:
-        if (firstRandomNumb > secondRandomNumb) {
-          trueAnswer = firstRandomNumb - secondRandomNumb;
-          outputToScreen(`Question: ${firstRandomNumb} - ${secondRandomNumb}`);
-          playerAnswer = takePlayerAnswer('Your answer: ');
-          countDefeat = validateAnswer(Number(playerAnswer), trueAnswer);
-        } else {
-          trueAnswer = secondRandomNumb - firstRandomNumb;
-          outputToScreen(`Question: ${secondRandomNumb} - ${firstRandomNumb}`);
-          playerAnswer = takePlayerAnswer('Your answer: ');
-          countDefeat += validateAnswer(Number(playerAnswer), trueAnswer);
-        }
-        break;
-      case 3:
-        trueAnswer = firstRandomNumb * secondRandomNumb;
-        outputToScreen(`Question: ${firstRandomNumb} * ${secondRandomNumb}`);
-        playerAnswer = takePlayerAnswer('Your answer: ');
-        countDefeat += validateAnswer(Number(playerAnswer), trueAnswer);
+      case '-':
+        trueAnswer = firstRandomNumb - secondRandomNumb;
         break;
       default:
+        trueAnswer = firstRandomNumb * secondRandomNumb;
         break;
     }
+    console.log(`${firstRandomNumb} ${operation} ${secondRandomNumb}`);
+    playerAnswer = takePlayerAnswer('Your answer: ');
+    countDefeat = validateAnswer(Number(playerAnswer), trueAnswer);
   }
   winOrLoose(countDefeat, playerName);
 };

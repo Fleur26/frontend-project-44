@@ -11,7 +11,6 @@ const evenGame = () => {
   const countRightAnswers = 3;
   let countAnswersPlayer = 0;
   let playerDefeat = 0;
-  const rightAnswer = 'yes or no';
   while (countAnswersPlayer < countRightAnswers && playerDefeat !== 1) {
     countAnswersPlayer += 1;
     const randomNumb = getRandomNumber(1, 100);
@@ -23,17 +22,7 @@ const evenGame = () => {
     }
     outputToScreen(`Question: ${randomNumb}`);
     const playerAnswer = takePlayerAnswer('Your answer: ');
-    switch (playerAnswer) {
-      case 'yes':
-        playerDefeat += validateAnswer(playerAnswer, isEven);
-        break;
-      case 'no':
-        playerDefeat += validateAnswer(playerAnswer, isEven);
-        break;
-      default:
-        playerDefeat += validateAnswer(playerAnswer, rightAnswer);
-        break;
-    }
+    playerDefeat += validateAnswer(playerAnswer, isEven);
   }
 
   winOrLoose(playerDefeat, playerName);
