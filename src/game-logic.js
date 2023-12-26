@@ -28,7 +28,7 @@ const validateAnswer = (playerAnswer, trueAnswer) => {
 const gameGreeting = (questionForGame) => { // change logic //
   outputToScreen('Welcome to the Brain Games!');
 
-  const playerName = takePlayerAnswer('May i have your name? ');
+  const playerName = takePlayerAnswer('May I have your name? ');
   outputToScreen(`Hello, ${playerName}!\n${questionForGame}`);
   return playerName;
 };

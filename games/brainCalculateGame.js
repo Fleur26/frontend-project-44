@@ -28,7 +28,7 @@ const brainCalculator = () => {
         trueAnswer = firstRandomNumb * secondRandomNumb;
         break;
     }
-    console.log(`${firstRandomNumb} ${operation} ${secondRandomNumb}`);
+    console.log(`Question: ${firstRandomNumb} ${operation} ${secondRandomNumb}`);
     playerAnswer = takePlayerAnswer('Your answer: ');
     countDefeat = validateAnswer(Number(playerAnswer), trueAnswer);
   }
