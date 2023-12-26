@@ -36,7 +36,7 @@ const winOrLoose = (defeatScore, playerName) => {
   if (defeatScore === 0) {
     console.log(`Congratulations, ${playerName}!`);
   } else {
-    console.log(`Let's try again ${playerName}!`);
+    console.log(`Let's try again, ${playerName}!`);
   }
 };
 export {
