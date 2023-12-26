@@ -5,7 +5,7 @@ const takePlayerAnswer = (question) => {
   return playerAnswer;
 };
 
-const outputToScreen = (text) => { // delete //
+const outputToScreen = (text) => { // delete or add 'question:'//
   console.log(text);
 };
 
