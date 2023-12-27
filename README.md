@@ -10,7 +10,7 @@ https://asciinema.org/a/LbIghezKJhCWMVAZxOPLMDWye - asciinema brainpogression
 https://asciinema.org/a/koUGu5dSKOsJnLzqlFa62OtSK - asciinema brainprime
 
 
-Description:
+## Description
 Set of five console games based on the principle of popular mobile brain-boosting applications. Each game asks questions that need to be answered correctly. After three correct answers, it is considered that the game is over. Incorrect answers end the game and offer to go through it again. Games:
 
 Calculator. Arithmetic expressions that need to be calculated.
@@ -19,5 +19,9 @@ The definition of an even number.
 Determining the largest common divisor.
 Definition of a prime number.
 
+## Setup
 
+```bash
+make install
+```
 
