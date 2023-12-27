@@ -13,7 +13,7 @@ const brainGcd = () => {
     const secondRandomNumber = getRandomNumber(1, 100);
     const trueAnswer = Gcd(firstRandomNumber, secondRandomNumber);
     console.log(trueAnswer);
-    outputToScreen(`Question: ${firstRandomNumber}  ${secondRandomNumber}`);
+    outputToScreen(`Question: ${firstRandomNumber} ${secondRandomNumber}`);
     const playerAnswer = takePlayerAnswer('Your answer: ');
     countPlayerDefeat += validateAnswer(Number(playerAnswer), trueAnswer, playerName);
   }
