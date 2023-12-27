@@ -18,7 +18,7 @@ const brainProgression = () => {
       progressionArray.push(startNumb);
       startNumb += diff;
     }
-    const indexSecretNumb = getRandomNumber(1, 11);
+    const indexSecretNumb = getRandomNumber(0, 9);
     const rightAnswer = progressionArray[indexSecretNumb];
     progressionArray[indexSecretNumb] = '..';
 
