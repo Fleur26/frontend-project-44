@@ -1,13 +1,13 @@
 import {
-  winOrLoose, takePlayerAnswer, outputToScreen, validateAnswer,
+  winOrLoose, takePlayerAnswer, validateAnswer,
 } from '../game-logic.js';
 import { getRandomNumber } from '../arithmetic-logic.js';
 
 const evenGame = () => {
-  outputToScreen('Welcome to the Brain Games!');
+  console.log('Welcome to the Brain Games!');
 
   const playerName = takePlayerAnswer('May i have your name? ');
-  outputToScreen(`Hello, ${playerName}!\nAnswer "yes" if the number is even, otherwise answer "no".`);
+  console.log(`Hello, ${playerName}!\nAnswer "yes" if the number is even, otherwise answer "no".`);
   const countRightAnswers = 3;
   let countAnswersPlayer = 0;
   let playerDefeat = 0;
@@ -20,7 +20,7 @@ const evenGame = () => {
     } else {
       isEven = 'no';
     }
-    outputToScreen(`Question: ${randomNumb}`);
+    console.log(`Question: ${randomNumb}`);
     const playerAnswer = takePlayerAnswer('Your answer: ');
     playerDefeat += validateAnswer(playerAnswer, isEven);
   }

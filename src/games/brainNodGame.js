@@ -1,5 +1,5 @@
 import {
-  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, outputToScreen,
+  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer,
 } from '../game-logic.js';
 import { getRandomNumber, gcd } from '../arithmetic-logic.js';
 
@@ -12,7 +12,7 @@ const brainGcd = () => {
     const firstRandomNumber = getRandomNumber(1, 100);
     const secondRandomNumber = getRandomNumber(1, 100);
     const trueAnswer = gcd(firstRandomNumber, secondRandomNumber);
-    outputToScreen(`Question: ${firstRandomNumber} ${secondRandomNumber}`);
+    console.log(`Question: ${firstRandomNumber} ${secondRandomNumber}`);
     const playerAnswer = takePlayerAnswer('Your answer: ');
     countPlayerDefeat += validateAnswer(Number(playerAnswer), trueAnswer, playerName);
   }
