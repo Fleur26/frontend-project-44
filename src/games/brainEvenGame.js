@@ -1,7 +1,7 @@
 import {
   winOrLoose, takePlayerAnswer, outputToScreen, validateAnswer,
-} from '../src/game-logic.js';
-import { getRandomNumber } from '../src/arithmetic-logic.js';
+} from '../game-logic.js';
+import { getRandomNumber } from '../arithmetic-logic.js';
 
 const evenGame = () => {
   outputToScreen('Welcome to the Brain Games!');

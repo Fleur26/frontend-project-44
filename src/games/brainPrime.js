@@ -1,7 +1,7 @@
 import {
   winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer,
-} from '../src/game-logic.js';
-import { getRandomNumber, isPrime } from '../src/arithmetic-logic.js';
+} from '../game-logic.js';
+import { getRandomNumber, isPrime } from '../arithmetic-logic.js';
 
 const brainPrime = () => {
   const playerName = gameGreeting('Answer "yes" if given number is prime. Otherwise answer "no".');

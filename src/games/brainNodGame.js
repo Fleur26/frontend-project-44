@@ -1,7 +1,7 @@
 import {
   winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, outputToScreen,
-} from '../src/game-logic.js';
-import { getRandomNumber, Gcd } from '../src/arithmetic-logic.js';
+} from '../game-logic.js';
+import { getRandomNumber, gcd } from '../arithmetic-logic.js';
 
 const brainGcd = () => {
   const playerName = gameGreeting('Find the greatest common divisor of given numbers.');
@@ -11,7 +11,7 @@ const brainGcd = () => {
     countAnswersPlayer -= 1;
     const firstRandomNumber = getRandomNumber(1, 100);
     const secondRandomNumber = getRandomNumber(1, 100);
-    const trueAnswer = Gcd(firstRandomNumber, secondRandomNumber);
+    const trueAnswer = gcd(firstRandomNumber, secondRandomNumber);
     outputToScreen(`Question: ${firstRandomNumber} ${secondRandomNumber}`);
     const playerAnswer = takePlayerAnswer('Your answer: ');
     countPlayerDefeat += validateAnswer(Number(playerAnswer), trueAnswer, playerName);

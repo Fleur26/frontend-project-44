@@ -1,5 +1,5 @@
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
-const Gcd = (x, y) => {
+const gcd = (x, y) => {
   let firstNumb = x;
   let secondNumb = y;
   while (firstNumb > 0 && secondNumb > 0) {
@@ -23,4 +23,4 @@ const isPrime = (num) => {
   }
   return num !== 1;
 };
-export { Gcd, getRandomNumber, isPrime };
+export { gcd, getRandomNumber, isPrime };
