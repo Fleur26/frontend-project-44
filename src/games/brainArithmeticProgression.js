@@ -1,14 +1,14 @@
 import {
-  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer,
+  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, resultOnScreen,
 } from '../game-logic.js';
 import { getRandomNumber } from '../arithmetic-logic.js';
 
 const brainProgression = () => {
   const playerName = gameGreeting('What number is missing in the progression?');
-  let defeatCount = 0;
+  let defeatCount = false;
   let countOfRightAnswers = 3;
 
-  while (countOfRightAnswers > 0 && defeatCount === 0) {
+  while (countOfRightAnswers > 0 && defeatCount === false) {
     countOfRightAnswers -= 1;
     const progressionNumbs = 10;
     const progressionArray = [];
@@ -25,6 +25,7 @@ const brainProgression = () => {
     console.log(`Question: ${progressionArray.join(' ')}`);
     const playerAnswer = takePlayerAnswer('Your answer: ');
     defeatCount = validateAnswer(Number(playerAnswer), rightAnswer);
+    resultOnScreen(defeatCount, playerAnswer, rightAnswer);
   }
   winOrLoose(defeatCount, playerName);
 };

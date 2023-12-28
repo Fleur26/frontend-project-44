@@ -1,5 +1,5 @@
 import {
-  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer,
+  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, resultOnScreen,
 } from '../game-logic.js';
 import { getRandomNumber } from '../arithmetic-logic.js';
 
@@ -7,9 +7,9 @@ const brainCalculator = () => {
   const playerName = gameGreeting('What is the result of the expression?');
   let countOfRightAnswer = 3;
   let playerAnswer = '';
-  let countDefeat = 0;
+  let countDefeat = false;
 
-  while (countOfRightAnswer > 0 && countDefeat === 0) {
+  while (countOfRightAnswer > 0 && countDefeat === false) {
     countOfRightAnswer -= 1;
     const firstRandomNumb = getRandomNumber(1, 10);
     const secondRandomNumb = getRandomNumber(1, 10);
@@ -31,6 +31,7 @@ const brainCalculator = () => {
     console.log(`Question: ${firstRandomNumb} ${operation} ${secondRandomNumb}`);
     playerAnswer = takePlayerAnswer('Your answer: ');
     countDefeat = validateAnswer(Number(playerAnswer), trueAnswer);
+    resultOnScreen(countDefeat, playerAnswer, trueAnswer);
   }
   winOrLoose(countDefeat, playerName);
 };
