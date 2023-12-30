@@ -13,7 +13,7 @@ import {
       defeatCount = validateAnswer(Number(playerAnswer), trueAnswer, playerName);
       resultOnScreen(defeatCount, playerAnswer, trueAnswer);
     } 
-    winOrLoose(defeatCount, playerName);
+     winOrLoose(defeatCount, playerName);
   }
 
   export default log;
