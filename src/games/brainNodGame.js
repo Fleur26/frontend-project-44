@@ -12,7 +12,7 @@ const brainGcd = () => {
     array.push([question, trueAnswer]);
   }
 
-  log('question..', array);
+  log('Find the greatest common divisor of given numbers.', array);
 };
 
 export default brainGcd;

@@ -16,6 +16,6 @@ const evenGame = () => {
     array.push([question, trueAnswer]);
   }
 
-  log('question..', array);
+  log('Answer "yes" if the number is even, otherwise answer "no".', array);
 };
 export default evenGame;

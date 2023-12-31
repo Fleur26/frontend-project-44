@@ -14,6 +14,6 @@ const brainPrime = () => {
     }
     array.push([question, rightAnswer]);
   }
-  log('q', array);
+  log('Answer "yes" if given number is prime. Otherwise answer "no".', array);
 };
 export default brainPrime;

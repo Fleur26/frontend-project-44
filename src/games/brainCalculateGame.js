@@ -24,7 +24,7 @@ const brainCalculator = () => {
     const question = (`Question: ${firstRandomNumb} ${operation} ${secondRandomNumb}`);
     array.push([question, trueAnswer]);
   }
-  log('q', array);
+  log('What is the result of the expression?)', array);
 };
 
 export default brainCalculator;
