@@ -1,6 +1,3 @@
-import {
-  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, resultOnScreen,
-} from '../game-logic.js';
 import { getRandomNumber, gcd } from '../arithmetic-logic.js';
 import log from '../log.js';
 

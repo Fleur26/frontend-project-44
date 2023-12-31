@@ -1,5 +1,5 @@
 import {
-  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, resultOnScreen, getData,
+  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, resultOnScreen,
 } from './game-logic.js';
 
 function log(questionForGame, array) {
@@ -12,7 +12,12 @@ function log(questionForGame, array) {
     console.log(question);
     const trueAnswer = answer;
     const playerAnswer = takePlayerAnswer('Your answer: ');
-    defeatCount = validateAnswer(Number(playerAnswer), trueAnswer, playerName);
+    if (typeof (playerAnswer) === typeof (trueAnswer)) {
+      defeatCount = validateAnswer(playerAnswer, trueAnswer, playerName);
+    } else {
+      defeatCount = validateAnswer(Number(playerAnswer), trueAnswer, playerName);
+    }
+
     resultOnScreen(defeatCount, playerAnswer, trueAnswer);
   }
   winOrLoose(defeatCount, playerName);
