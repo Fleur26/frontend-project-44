@@ -34,3 +34,8 @@ export const winOrLoose = (defeatScore, playerName) => {
     console.log(`Let's try again, ${playerName}!`);
   }
 };
+
+export const getData = (func) => {
+  const arrayData = func;
+  return arrayData;
+};
