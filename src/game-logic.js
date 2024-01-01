@@ -43,7 +43,6 @@ export const getData = (func) => {
 export const translateAnswer = (rightAnswer) => {
   if (rightAnswer) {
     return 'yes';
-  } else {
-    return 'no';
   }
+  return 'no';
 };
