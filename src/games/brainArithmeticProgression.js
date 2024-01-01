@@ -2,8 +2,6 @@ import { getRandomNumber } from '../arithmetic-logic.js';
 import log from '../log.js';
 
 const brainProgression = () => {
-  const array = [];
-  for (let i = 0; i < 3; i += 1) {
     const progressionNumbs = 10;
     const progressionArray = [];
     const diff = getRandomNumber(1, 11);
@@ -17,9 +15,8 @@ const brainProgression = () => {
     progressionArray[indexSecretNumb] = '..';
 
     const question = (`Question: ${progressionArray.join(' ')}`);
-    array.push([question, rightAnswer]);
-  }
-  log('What number is missing in the progression?', array);
+    const array = [question, rightAnswer];
+    return array;
 };
-
+log('What number is missing in the progression?', brainProgression);
 export default brainProgression;

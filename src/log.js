@@ -1,14 +1,14 @@
 import {
-  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, resultOnScreen,
+  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, resultOnScreen, getData,
 } from './game-logic.js';
 
-function log(questionForGame, array) {
+function log(questionForGame, func) {
   const playerName = gameGreeting(questionForGame);
   let defeatCount = false;
   let countOfRightAnswers = 3;
   while (countOfRightAnswers > 0 && defeatCount === false) {
     countOfRightAnswers -= 1;
-    const [question, answer] = array[countOfRightAnswers];
+    const [question, answer] = getData(func);
     console.log(question);
     const trueAnswer = answer;
     const playerAnswer = takePlayerAnswer('Your answer: ');

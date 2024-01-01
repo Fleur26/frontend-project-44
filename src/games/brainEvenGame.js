@@ -1,21 +1,16 @@
 import { getRandomNumber } from '../arithmetic-logic.js';
 import log from '../log.js';
+import { translateAnswer } from '../game-logic.js';
 
 const evenGame = () => {
-  const array = [];
-  for (let i = 0; i < 3; i += 1) {
     const randomNumb = getRandomNumber(1, 100);
     let isEven = randomNumb % 2 === 0;
-    if (isEven) {
-      isEven = 'yes';
-    } else {
-      isEven = 'no';
-    }
+    isEven = translateAnswer(isEven);
     const question = (`Question: ${randomNumb}`);
     const trueAnswer = isEven;
-    array.push([question, trueAnswer]);
-  }
+    const array = [question, trueAnswer];
+    return array;
 
-  log('Answer "yes" if the number is even, otherwise answer "no".', array);
 };
+log('Answer "yes" if the number is even, otherwise answer "no".', evenGame);
 export default evenGame;

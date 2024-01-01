@@ -36,6 +36,14 @@ export const winOrLoose = (defeatScore, playerName) => {
 };
 
 export const getData = (func) => {
-  const arrayData = func;
+  const arrayData = func();
   return arrayData;
+};
+
+export const translateAnswer = (rightAnswer) => {
+  if (rightAnswer) {
+    return 'yes';
+  } else {
+    return 'no';
+  }
 };
