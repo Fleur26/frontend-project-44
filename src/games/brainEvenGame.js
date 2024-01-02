@@ -1,5 +1,5 @@
 import { getRandomNumber } from '../arithmetic-logic.js';
-import engine from '../log.js';
+import engine from '../engine.js';
 
 const evenGame = () => {
   const description = 'Answer "yes" if the number is even, otherwise answer "no".';

@@ -1,4 +1,4 @@
-import engine from '../log.js';
+import engine from '../engine.js';
 import { getRandomNumber, isPrime } from '../arithmetic-logic.js';
 
 const brainPrime = () => {

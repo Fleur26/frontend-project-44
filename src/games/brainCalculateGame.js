@@ -1,5 +1,5 @@
 import { getRandomNumber } from '../arithmetic-logic.js';
-import engine from '../log.js';
+import engine from '../engine.js';
 
 const arithmeticOperations = ['+', '-', '*'];
 const calculator = (index, firstNumb, secondNumb) => {

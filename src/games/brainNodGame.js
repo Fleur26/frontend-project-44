@@ -1,5 +1,5 @@
 import { getRandomNumber, gcd } from '../arithmetic-logic.js';
-import engine from '../log.js';
+import engine from '../engine.js';
 
 const brainGcd = () => {
   const description = 'Find the greatest common divisor of given numbers.';
