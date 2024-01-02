@@ -1,15 +1,19 @@
 import { getRandomNumber } from '../arithmetic-logic.js';
-import log from '../log.js';
-import { translateAnswer } from '../game-logic.js';
+import engine from '../log.js';
 
 const evenGame = () => {
+  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
   const randomNumb = getRandomNumber(1, 100);
   let isEven = randomNumb % 2 === 0;
-  isEven = translateAnswer(isEven);
+  if (isEven) {
+    isEven = 'yes';
+  } else {
+    isEven = 'no';
+  }
   const question = (`Question: ${randomNumb}`);
-  const trueAnswer = isEven;
-  const array = [question, trueAnswer];
+  const correctAnswer = isEven;
+  const array = [description, question, String(correctAnswer)];
   return array;
 };
-log('Answer "yes" if the number is even, otherwise answer "no".', evenGame);
+engine(evenGame);
 export default evenGame;

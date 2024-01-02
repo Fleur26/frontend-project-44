@@ -1,15 +1,16 @@
 import { getRandomNumber, gcd } from '../arithmetic-logic.js';
-import log from '../log.js';
+import engine from '../log.js';
 
 const brainGcd = () => {
+  const description = 'Find the greatest common divisor of given numbers.';
   const firstRandomNumber = getRandomNumber(1, 10);
   const secondRandomNumber = getRandomNumber(1, 10);
-  const trueAnswer = gcd(firstRandomNumber, secondRandomNumber);
+  const correctAnswer = gcd(firstRandomNumber, secondRandomNumber);
   const question = (`Question: ${firstRandomNumber} ${secondRandomNumber}`);
 
-  const array = [question, trueAnswer];
+  const array = [description, question, String(correctAnswer)];
   return array;
 };
-log('Find the greatest common divisor of given numbers.', brainGcd);
+engine(brainGcd);
 
 export default brainGcd;

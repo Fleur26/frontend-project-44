@@ -1,26 +1,26 @@
-import {
-  winOrLoose, gameGreeting, takePlayerAnswer, validateAnswer, resultOnScreen, getData,
-} from './game-logic.js';
+import readlineSync from 'readline-sync';
+import gameGreeting from './cli.js';
 
-function log(questionForGame, func) {
-  const playerName = gameGreeting(questionForGame);
-  let defeatCount = false;
-  let countOfRightAnswers = 3;
-  while (countOfRightAnswers > 0 && defeatCount === false) {
-    countOfRightAnswers -= 1;
-    const [question, answer] = getData(func);
+let countAnswersPlayer = 3;
+export default (func) => {
+  const [description,,,] = func();
+  const playerName = gameGreeting();
+  console.log(description);
+  while (countAnswersPlayer > 0) {
+    countAnswersPlayer -= 1;
+    const [, question, answer] = func();
     console.log(question);
-    const trueAnswer = answer;
-    const playerAnswer = takePlayerAnswer('Your answer: ');
-    if (typeof (playerAnswer) === typeof (trueAnswer)) {
-      defeatCount = validateAnswer(playerAnswer, trueAnswer, playerName);
+    const correctAnswer = answer;
+    const playerAnswer = readlineSync.question('Your answer: ');
+    if (playerAnswer === correctAnswer) {
+      console.log('Correct!');
     } else {
-      defeatCount = validateAnswer(Number(playerAnswer), trueAnswer, playerName);
+      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${playerName}!`);
+      break;
     }
-
-    resultOnScreen(defeatCount, playerAnswer, trueAnswer);
   }
-  winOrLoose(defeatCount, playerName);
-}
-
-export default log;
+  if (countAnswersPlayer === 0) {
+    console.log(`Congratulations, ${playerName}!`);
+  }
+};

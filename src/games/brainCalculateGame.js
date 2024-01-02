@@ -1,27 +1,34 @@
 import { getRandomNumber } from '../arithmetic-logic.js';
-import log from '../log.js';
+import engine from '../log.js';
 
-const brainCalculator = () => {
-  const firstRandomNumb = getRandomNumber(1, 10);
-  const secondRandomNumb = getRandomNumber(1, 10);
-  const arrayArithmeticOp = ['+', '-', '*'];
-  let trueAnswer = 0;
-  const index = getRandomNumber(0, 3);
-  const operation = arrayArithmeticOp[index];
+const arithmeticOperations = ['+', '-', '*'];
+const calculator = (index, firstNumb, secondNumb) => {
+  const operation = arithmeticOperations[index];
+  let correctAnswer = 0;
   switch (operation) {
     case '+':
-      trueAnswer = firstRandomNumb + secondRandomNumb;
+      correctAnswer = firstNumb + secondNumb;
       break;
     case '-':
-      trueAnswer = firstRandomNumb - secondRandomNumb;
+      correctAnswer = firstNumb - secondNumb;
       break;
     default:
-      trueAnswer = firstRandomNumb * secondRandomNumb;
+      correctAnswer = firstNumb * secondNumb;
       break;
   }
-  const question = (`Question: ${firstRandomNumb} ${operation} ${secondRandomNumb}`);
-  const array = [question, trueAnswer];
+  return correctAnswer;
+};
+
+const brainCalculator = () => {
+  const description = 'What is the result of the expression?';
+  const firstRandomNumb = getRandomNumber(1, 10);
+  const secondRandomNumb = getRandomNumber(1, 10);
+  const index = getRandomNumber(0, arithmeticOperations.length);
+  const correctAnswer = calculator(index, firstRandomNumb, secondRandomNumb);
+  const question = (`Question: ${firstRandomNumb} ${arithmeticOperations[index]} ${secondRandomNumb}`);
+  const array = [description, question, String(correctAnswer)];
   return array;
 };
-log('What is the result of the expression?)', brainCalculator);
+
+engine(brainCalculator);
 export default brainCalculator;

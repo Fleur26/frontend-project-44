@@ -1,14 +1,18 @@
-import log from '../log.js';
+import engine from '../log.js';
 import { getRandomNumber, isPrime } from '../arithmetic-logic.js';
-import { translateAnswer } from '../game-logic.js';
 
 const brainPrime = () => {
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const randomNumb = getRandomNumber(1, 100);
   const question = (`Question: ${randomNumb}`);
-  let rightAnswer = isPrime(randomNumb);
-  rightAnswer = translateAnswer(rightAnswer);
-  const array = [question, rightAnswer];
+  let correctAnswer = isPrime(randomNumb);
+  if (correctAnswer) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
+  const array = [description, question, correctAnswer];
   return array;
 };
-log('Answer "yes" if given number is prime. Otherwise answer "no".', brainPrime);
+engine(brainPrime);
 export default brainPrime;
