@@ -8,9 +8,8 @@ export default (func) => {
   console.log(description);
   while (rounds > 0) {
     rounds -= 1;
-    const [, question, answer] = func();
+    const [, question, correctAnswer] = func();
     console.log(question);
-    const correctAnswer = answer;
     const playerAnswer = readlineSync.question('Your answer: ');
     if (playerAnswer === correctAnswer) {
       console.log('Correct!');
@@ -20,7 +19,5 @@ export default (func) => {
       break;
     }
   }
-  if (rounds === 0) {
-    console.log(`Congratulations, ${playerName}!`);
-  }
+  console.log(`Congratulations, ${playerName}!`);
 };
