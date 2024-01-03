@@ -15,5 +15,5 @@ const evenGame = () => {
   const array = [description, question, String(correctAnswer)];
   return array;
 };
-engine(evenGame);
-export default evenGame;
+
+export default engine(evenGame);

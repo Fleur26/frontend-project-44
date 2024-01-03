@@ -19,5 +19,5 @@ const brainProgression = () => {
   const array = [description, question, String(correctAnswer)];
   return array;
 };
-engine(brainProgression);
-export default brainProgression;
+
+export default engine(brainProgression);

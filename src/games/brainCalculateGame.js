@@ -30,5 +30,4 @@ const brainCalculator = () => {
   return array;
 };
 
-engine(brainCalculator);
-export default brainCalculator;
+export default engine(brainCalculator);

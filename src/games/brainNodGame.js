@@ -11,6 +11,5 @@ const brainGcd = () => {
   const array = [description, question, String(correctAnswer)];
   return array;
 };
-engine(brainGcd);
 
-export default brainGcd;
+export default engine(brainGcd);
