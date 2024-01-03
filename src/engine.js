@@ -1,13 +1,13 @@
 import readlineSync from 'readline-sync';
 import gameGreeting from './cli.js';
 
-let countAnswersPlayer = 3;
+let rounds = 3;
 export default (func) => {
   const [description,,,] = func();
   const playerName = gameGreeting();
   console.log(description);
-  while (countAnswersPlayer > 0) {
-    countAnswersPlayer -= 1;
+  while (rounds > 0) {
+    rounds -= 1;
     const [, question, answer] = func();
     console.log(question);
     const correctAnswer = answer;
@@ -20,7 +20,7 @@ export default (func) => {
       break;
     }
   }
-  if (countAnswersPlayer === 0) {
+  if (rounds === 0) {
     console.log(`Congratulations, ${playerName}!`);
   }
 };
