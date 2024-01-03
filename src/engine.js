@@ -19,8 +19,6 @@ export default (func) => {
       console.log(`Let's try again, ${playerName}!`);
       break;
     }
-  }
-  if (countAnswersPlayer === 0) {
     console.log(`Congratulations, ${playerName}!`);
   }
 };

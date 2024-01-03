@@ -14,5 +14,5 @@ const brainPrime = () => {
   const array = [description, question, correctAnswer];
   return array;
 };
-engine(brainPrime);
-export default brainPrime;
+
+export default engine(brainPrime);
