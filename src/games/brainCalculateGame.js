@@ -18,9 +18,8 @@ const calculator = (index, firstNumb, secondNumb) => {
   }
   return correctAnswer;
 };
-
+const description = 'What is the result of the expression?';
 const brainCalculator = () => {
-  const description = 'What is the result of the expression?';
   const firstRandomNumb = getRandomNumber(1, 10);
   const secondRandomNumb = getRandomNumber(1, 10);
   const index = getRandomNumber(0, arithmeticOperations.length);
