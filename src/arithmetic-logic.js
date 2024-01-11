@@ -1,21 +1,9 @@
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 export const gcd = (x, y) => {
-  let firstNumb = x;
-  let secondNumb = y;
-  while (firstNumb > 0 && secondNumb > 0) {
-    if (firstNumb > secondNumb) {
-      firstNumb %= secondNumb;
-    } else {
-      secondNumb %= firstNumb;
-    }
+  if (y === 0) {
+    return x;
   }
-  let result = 0;
-  if (firstNumb === 0) {
-    result = secondNumb;
-  } else {
-    result = firstNumb;
-  }
-  return result;
+  return gcd(y, x % y);
 };
 export const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {
