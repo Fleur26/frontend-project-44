@@ -9,13 +9,12 @@ export default (func) => {
     const [, question, correctAnswer] = func();
     console.log(question);
     const playerAnswer = readlineSync.question('Your answer: ');
-    if (playerAnswer === correctAnswer) {
-      console.log('Correct!');
-    } else {
+    if (playerAnswer !== correctAnswer) {
       console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       console.log(`Let's try again, ${playerName}!`);
       break;
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${playerName}!`);
 };
