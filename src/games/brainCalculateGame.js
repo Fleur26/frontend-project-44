@@ -12,8 +12,11 @@ const calculator = (index, firstNumb, secondNumb) => {
     case '-':
       correctAnswer = firstNumb - secondNumb;
       break;
-    default:
+    case '*':
       correctAnswer = firstNumb * secondNumb;
+      break;
+    default:
+      console.log('error');
       break;
   }
   return correctAnswer;
