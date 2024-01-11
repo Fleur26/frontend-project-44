@@ -6,8 +6,8 @@ const brainPrime = () => {
   const randomNumb = getRandomNumber(1, 100);
   const question = (`Question: ${randomNumb}`);
   const correctAnswer = isPrime(randomNumb) ? 'yes' : 'no';
-  const array = [description, question, correctAnswer];
+  const array = [question, correctAnswer];
   return array;
 };
 
-export default engine(brainPrime);
+export default engine(description, brainPrime);

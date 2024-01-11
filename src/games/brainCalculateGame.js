@@ -25,8 +25,8 @@ const brainCalculator = () => {
   const index = getRandomNumber(0, arithmeticOperations.length);
   const correctAnswer = calculator(index, firstRandomNumb, secondRandomNumb);
   const question = (`Question: ${firstRandomNumb} ${arithmeticOperations[index]} ${secondRandomNumb}`);
-  const array = [description, question, String(correctAnswer)];
+  const array = [question, String(correctAnswer)];
   return array;
 };
 
-export default engine(brainCalculator);
+export default engine(description, brainCalculator);

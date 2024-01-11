@@ -16,8 +16,8 @@ const brainProgression = () => {
   progressionArray[indexSecretNumb] = '..';
 
   const question = (`Question: ${progressionArray.join(' ')}`);
-  const array = [description, question, String(correctAnswer)];
+  const array = [question, String(correctAnswer)];
   return array;
 };
 
-export default engine(brainProgression);
+export default engine(description, brainProgression);

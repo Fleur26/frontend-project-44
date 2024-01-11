@@ -8,8 +8,8 @@ const brainGcd = () => {
   const correctAnswer = gcd(firstRandomNumber, secondRandomNumber);
   const question = (`Question: ${firstRandomNumber} ${secondRandomNumber}`);
 
-  const array = [description, question, String(correctAnswer)];
+  const array = [question, String(correctAnswer)];
   return array;
 };
 
-export default engine(brainGcd);
+export default engine(description, brainGcd);

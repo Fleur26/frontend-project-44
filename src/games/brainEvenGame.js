@@ -12,8 +12,8 @@ const evenGame = () => {
   }
   const question = (`Question: ${randomNumb}`);
   const correctAnswer = isEven;
-  const array = [description, question, String(correctAnswer)];
+  const array = [question, String(correctAnswer)];
   return array;
 };
 
-export default engine(evenGame);
+export default engine(description, evenGame);
