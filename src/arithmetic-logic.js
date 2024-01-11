@@ -14,8 +14,9 @@ export const isPrime = (num) => {
 
 export const progression = (startNumb, diff, length) => {
   const progressionArray = [startNumb];
+  let progressionNumber = startNumb;
   for (let j = 0; j < length; j += 1) {
-    progressionArray.push(startNumb + diff);
+    progressionArray.push(progressionNumber += diff);
   }
   return progressionArray;
 };
