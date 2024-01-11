@@ -11,3 +11,11 @@ export const isPrime = (num) => {
   }
   return num !== 1;
 };
+
+export const progression = (startNumb, diff, length) => {
+  const progressionArray = [startNumb];
+  for (let j = 0; j < length; j += 1) {
+    progressionArray.push(startNumb + diff);
+  }
+  return progressionArray;
+};

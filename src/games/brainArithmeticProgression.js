@@ -1,17 +1,13 @@
-import { getRandomNumber } from '../arithmetic-logic.js';
+import { getRandomNumber, progression } from '../arithmetic-logic.js';
 import engine from '../engine.js';
 
 const description = 'What number is missing in the progression?';
 const brainProgression = () => {
   const progressionLength = 10;
-  const progressionArray = [];
   const diff = getRandomNumber(1, 11);
-  let startNumb = getRandomNumber(1, 100);
-  for (let j = 0; j < progressionLength; j += 1) {
-    progressionArray.push(startNumb);
-    startNumb += diff;
-  }
-  const indexSecretNumb = getRandomNumber(0, 9);
+  const startNumb = getRandomNumber(1, 100);
+  const progressionArray = progression(startNumb, diff, progressionLength);
+  const indexSecretNumb = getRandomNumber(0, progressionLength - 1);
   const correctAnswer = progressionArray[indexSecretNumb];
   progressionArray[indexSecretNumb] = '..';
 
